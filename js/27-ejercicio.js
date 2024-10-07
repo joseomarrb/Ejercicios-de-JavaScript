@@ -6,14 +6,18 @@ arreglo convirtiendo cada número a su versión en palabras. */
 
 
 function numerosAPalabras(array) {
-
+    const palabras = ["cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nuevo", "diez"];
+    const nuevoArr = array.map( num => {
+        return palabras[num]
+    } )
+    return nuevoArr
 }
 
 console.log(numerosAPalabras([0, 1, 2, 3, 4])) // ["cero", "uno", "dos", "tres", "cuatro"]
-console.log(numerosAPalabras([5, 6, 7, 8, 9])) // ["cinco", "seis", "siete", "ocho", "nueve"]
+console.log(numerosAPalabras([0, 5, 6, 7, 8, 9])) // ["cinco", "seis", "siete", "ocho", "nueve"]
 
 
-const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const numeros = [1, 2, 6, 4, 3, 8, 9, 12]
 //forEach
 numeros.forEach( n => console.log(n));
 
@@ -51,5 +55,5 @@ const a = aleatorios.sort( (x, y) => {
     return x - y
 })
 
-// const recibirText = prompt("Escribe aquí tu texto");
-let texto = "hola mundo";
+// // const recibirText = prompt("Escribe aquí tu texto");
+// let texto = "hola mundo";
