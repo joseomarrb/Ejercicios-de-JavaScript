@@ -9,9 +9,8 @@
  */
 
 function invertir(num) {
-    const original = num;
-    
-
+    const invertido = num.toString().split("").reverse().join("");
+    return parseInt(invertido) === num ? `${num} ES capicúa` : `${num} NO ES capicúa`;
 }
 
-console.log(invertir(num))
+console.log(invertir(242))

@@ -15,7 +15,19 @@
  */
 
 function MCD(A, B) {
+    if (A === 0) {
+        return B;
+    } else if (B === 0) {
+        return A;
+    } else {
+        while (B !== 0) {
+            let temporal = A % B;
+            A = B;
+            B = temporal;            
+        }
+    }
     
+    return A;
 }
 
-console.log(MCD(10, 5));
+console.log(MCD(0, 1));
