@@ -9,13 +9,11 @@
  */
 
 let entero = parseInt(prompt("Ingrese un número entero aquí:"));
+let resultado = "";
 
 do {
-    if ( entero <= 0 ) {
-        entero = parseInt(prompt("Ingrese un número entero mayor que cero aquí:"));
-    }
-
+    resultado += (entero % 10) + " ";
+    entero = Math.floor(entero / 10);
     
-
-
 } while ( entero );
+alert("Dígitos del número: " + resultado.trim());
