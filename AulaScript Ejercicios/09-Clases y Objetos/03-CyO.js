@@ -7,3 +7,17 @@
  * Aclaraciones: Por ejemplo objeto oro, masa de la muestra 194 gr y volumen 10 cc. 
  * Densidad deberá devolver 19,4.
  */
+
+class Piedra {
+    constructor(masa, volumen) {
+        this._masa = masa;
+        this._volumen = volumen;
+    }
+
+    densidad(){
+        return (this._masa / this._volumen)
+    }
+}
+
+const oro = new Piedra(194, 10);
+console.log(oro.densidad());

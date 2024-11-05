@@ -8,3 +8,15 @@
  * Aclaraciones: Por ejemplo, guardar las calificaciones de un alumno de nombre 
  * Juan, Inglés: 9, programacion: 8, HTML: 7. Sacará Nota media de Juan 8
  */
+
+const objeto = {
+    nombre: "JUAN",
+    ingles: 9,
+    programacion: 8,
+    HTML: 7,
+    media(){
+        return (this.ingles + this.HTML + this.programacion) / 3
+    }
+};
+
+console.log(objeto.media());

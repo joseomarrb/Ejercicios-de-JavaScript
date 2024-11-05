@@ -23,3 +23,22 @@
  * 
  * En la solución se usa el camino má primitivo posible: arrays y bucles básicos
  */
+
+class Ficha {
+    constructor(nombre = "Anonimo", sesiones = [], numsesiones = 0) {
+        this._nombre = nombre;
+        this._sesiones = [];
+        this._numsesiones = 0;
+    };
+
+    anotar(num){
+        this._sesiones.push(num);
+        this._numsesiones += 1;
+    };
+
+    media(){
+        return this._sesiones / this._numsesiones
+    }
+}
+
+const test = new Ficha("Probando");

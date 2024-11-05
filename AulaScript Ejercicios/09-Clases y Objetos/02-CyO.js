@@ -6,3 +6,16 @@
  * Aclaraciones: Por ejemplo objeto vestido, precio 400 y descuento 10. El método 
  * devolverá como resultado 360 (400 - 10*400/100).
  */
+
+let precio = parseInt(prompt("Inserta el precio aquí"));
+let descuento = parseInt(prompt("Inserta el descuento aquí"));
+
+const objeto = {
+    precio,
+    descuento,
+    descuentoAplicado() {
+        return (this.precio - this.descuento * this.precio / 100);
+    }
+};
+
+console.log(objeto.descuentoAplicado())
