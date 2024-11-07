@@ -7,3 +7,13 @@
  * Aclaraciones: El bloque ya está creado solo tienes que crear la función 
  * denominada fuentesImg() asociada al botón fuentes
  */
+
+const fuentes = document.querySelector("#fuentes");
+
+function fuentesImg() {
+    fuentes.style.textAlign = "center";
+    const imagenes = document.querySelectorAll("img");
+    imagenes.forEach( img => {
+        fuentes.textContent += `${img.src}`
+    })
+}

@@ -7,3 +7,13 @@
  * 
  * Aclaraciones: La función se llamara intercalar()
  */
+
+const body = document.body;
+const subtitulo = document.querySelector("#subtitulo");
+
+function intercalar() {
+    const div = document.createElement("DIV");
+    div.classList.add("destacar");
+    div.textContent = "Página Modelo";
+    body.insertBefore(div, subtitulo)
+}

@@ -7,3 +7,14 @@
  * Aclaraciones: El botón ya existe solo es necesario escribir la función, 
  * procurando usar los métodos de document para crear nodos.
  */
+
+const header = document.querySelector(".header");
+
+function crearDiv() {
+    const div = document.createElement("DIV");
+    div.textContent = "Este texto consiste en la cadena Javascript permite crear páginas dinámicas."
+    div.style.color = "white";
+    div.style.backgroundColor = "red";
+    div.style.textAlign = "center";
+    header.appendChild(div);
+}

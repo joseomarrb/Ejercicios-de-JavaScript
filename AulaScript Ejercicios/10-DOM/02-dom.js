@@ -6,3 +6,12 @@
  * Aclaraciones: El bloque cambiar acepta el click, el color del titular 
  * cambia a rojo y queda centrado
  */
+
+const boton = document.querySelector(".boton");
+const titular = document.querySelector("#titular");
+
+function cambiar() {
+    titular.style.color = "red";
+    titular.style.textAlign = "center";
+}
+

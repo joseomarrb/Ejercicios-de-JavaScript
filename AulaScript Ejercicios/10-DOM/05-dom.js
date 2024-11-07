@@ -7,3 +7,23 @@
  * Aclaraciones: Cada imagen es como un botón que alterna el pie de foto entre 
  * vacio (sin texto) y el valor del atributo alt de cada una.
  */
+const imagenes = document.querySelectorAll("img");
+function ponerPie() {
+    imagenes.forEach(img => {
+        img.addEventListener("click", () => {
+            // Encuentra el <figure> que contiene la imagen
+            const figure = img.closest("figure");
+    
+            // Selecciona el <figcaption> dentro del <figure>
+            const figcaption = figure.querySelector("figcaption");
+    
+            // Alterna el contenido de <figcaption> entre el texto del alt y vacío
+            if (figcaption.textContent === "") {
+                figcaption.textContent = img.alt;
+            } else {
+                figcaption.textContent = "";
+            }
+        });
+    });    
+}
+

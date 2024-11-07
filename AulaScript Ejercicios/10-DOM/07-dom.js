@@ -7,3 +7,9 @@
  * Aclaraciones: Tienes que modificar el botón clase y completar la 
  * función toggleClase() para producir este efecto.
  */
+
+const titular = document.querySelector("#titular");
+
+function toggle() {
+    titular.classList.toggle("activo");
+}

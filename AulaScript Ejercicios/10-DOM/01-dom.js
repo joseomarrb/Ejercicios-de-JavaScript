@@ -7,3 +7,12 @@
  * 
  * Aclaraciones: Debe cambiar de Hola Mundo a Hola Mundo Javascript
  */
+
+const boton = document.querySelector("#boton");
+const titular = document.querySelector("#titular");
+
+function cambiar() {
+    titular.textContent = "Hola Mundo JavaScript";
+    titular.style.color = "red";
+    titular.style.textAlign = "center";
+}

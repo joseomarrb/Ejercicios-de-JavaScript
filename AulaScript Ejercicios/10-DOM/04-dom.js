@@ -7,3 +7,9 @@
  * Aclaraciones: Al pulsar el botón el subtítulo debe dejar de existir en el código de la página. 
  * No deb producirse error al volver a pulsar el botón.
  */
+
+const subtitulo = document.querySelector("#subtitulo");
+
+function borrarDiv() {
+    subtitulo.remove();
+}

@@ -1,0 +1,61 @@
+body {
+    display: block;
+    margin: 8px;
+}
+
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+header {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.paneles {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #727c331a;
+    border: 1px solid black;
+    width: fit-content;
+    margin: 24px auto;
+    width: 150px;
+    padding: 24px;
+}
+
+.boton{
+    border: 1px solid black;
+    padding: 2px 10px;
+    background: rgba(27,109,236,0.61);
+    color: white;
+    font-family: Arial, sans-seriff;
+    width: fit-content;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.paneles figure{
+    width: 75px;
+}
+.activo{
+    color: blue;
+    font-family: Arial, "sans-serif";
+}
+.destacar{
+    font-size: 18px;
+    color:red;
+}
