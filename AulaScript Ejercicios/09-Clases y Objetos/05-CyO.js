@@ -37,8 +37,17 @@ class Ficha {
     };
 
     media(){
-        return this._sesiones / this._numsesiones
+        let suma = 0;
+        for (let i = 0; i < this._sesiones.length; i++) {
+            suma += this._sesiones[i];
+        }
+        return Math.floor(suma / this._numsesiones);
     }
-}
+};
 
-const test = new Ficha("Probando");
+const omar = new Ficha("Omar");
+omar.anotar(8);
+omar.anotar(10);
+omar.anotar(6);
+
+console.log(omar.media());

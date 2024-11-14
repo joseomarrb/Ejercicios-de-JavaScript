@@ -28,3 +28,39 @@
  * 
  * Si teniendo 35 pasajeros se pide que bajen 40 el autobús se queda vacío.
  */
+
+class Conductor {
+    constructor(nombre, licencia) {
+        this.nombre = nombre;
+        this.licencia = licencia;
+    }
+}
+
+const conductorJose = new Conductor("José", 1234);
+class Bus {
+    constructor(capacidad, conductor) {
+        this.capacidad = capacidad;
+        this.pasajeros = 0;
+        this.conductor = conductor
+    }
+
+    subir(num){
+        if (num <= this.capacidad) {
+            this.pasajeros += num
+        } else {
+            this.pasajeros = this.capacidad
+        }
+        return `Cantidad Pasajeros: ${this.pasajeros}`;
+    };
+
+    bajar(num){
+        if (num <= this.pasajeros) {
+            this.pasajeros -= num
+        } else {
+            this.pasajeros = 0
+        }
+        return `Cantidad Pasajeros: ${this.pasajeros}`;
+    };
+};
+
+const busLinea1 = new Bus(40, conductorJose);

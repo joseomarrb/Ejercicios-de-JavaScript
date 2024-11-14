@@ -24,3 +24,32 @@
  * 
  * Depués de hacer factura.pagar() al imprimir factura.estado saldrá "pagada".
  */
+
+const listaClientes = [
+    {nombre: "Lucas", email: "lucas@gmail.com", telefono: 845612},
+    {nombre: "Chantal", email: "chantal@gmail.com", telefono: 915412},
+    {nombre: "Randy", email: "randy@gmail.com", telefono: 445666},
+];
+class Factura {
+    constructor(idCliente, total, estado = "pendiente") {
+        if (idCliente < 0 || idCliente >= listaClientes.length) {
+            throw new Error("idCliente inválido");
+        }
+        this.idCliente = idCliente;
+        this.total = total;
+        this.estado = estado;
+    };
+
+    cobrar () {
+        return this.estado = "pagada";
+    };
+
+    imprimir () {
+        return `Cliente: ${listaClientes[this.idCliente].nombre}, Total: ${this.total}, Estado: ${this.estado}`
+    };
+};
+
+const lucas = new Factura(2, 600);
+lucas.cobrar();
+console.log(lucas.imprimir())
+

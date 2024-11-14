@@ -24,3 +24,28 @@
  * Si hacemos articulo.telefono() nos dará  nombre y teléfono del proveedor: 
  * Teléfono de TenoShop es 1234567
  */
+
+class Proveedor {
+    constructor(nombre, email, telefono) {
+        this.nombre = nombre;
+        this.email = email;
+        this.telefono = telefono;
+    }
+};
+
+const proveedorISM = new Proveedor("ISM", "ism@gmail.com", 8292792394)
+
+class Articulo {
+    constructor(nombre, proveedor, precio) {
+        this.nombre = nombre;
+        this.proveedor = proveedor;
+        this.precio = precio;
+    };
+
+    telefono(){
+        return { nombre: `${this.proveedor.nombre}`, telefono: `${this.proveedor.telefono}` }
+    };
+};
+
+const kolaReal = new Articulo("Kola Real", proveedorISM, 860);
+console.log(kolaReal.telefono());
