@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08-Evento AulaScript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-style: italic;
+            font-family: sans-serif;
+            font-size: 24px;
+            box-shadow: 2px 2px 2px 2px #0005;
+            border-radius: 4px;
+            width: 300px;
+            height: 70px;
+            background-color: red;
+        }
+
+        .oculto{ display: none }            
+        .visible { display:block }           
+    </style> 
+</head>
+<body>
+    <div class="box oculto" id="ficha1">Hola, soy el bloque 1</div>           
+    <div class="box oculto" id="ficha2">Hola, soy el bloque 2</div>            
+    <div class="box oculto" id="ficha3">Hola, soy el bloque 3</div>
+    
+    <script src="08-eventos.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-Eventos AulaScript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+
+        div{
+            background-color: #000080;
+            color: #fff;
+            padding: 15px 55px;
+            font-size: 24px;
+            box-shadow: 2px 1px 20px 2px #0005;
+            border-radius: 8px;
+            transition: all .2s ease;
+            cursor: pointer;
+        }
+
+        div:hover{
+            background-color: #3a3aed;
+        }
+    </style>
+</head>
+<body>
+    <div id="pasar">Pasa por aquí</div>
+    <div id="efecto">Efectos del movimiento</div>
+
+    <script src="02-eventos.js"></script>
+</body>
+</html>

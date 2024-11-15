@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-Eventos AulaScript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #btn{
+            padding: 20px 50px;
+            background-color: royalblue;
+            border-radius: 14px;
+            color: #fff;
+            font-size: 24px;
+            font-family: sans-serif;
+            box-shadow: 3px 2px 12px 1px #0008;
+            cursor: pointer;
+            transition: all .2s ease;
+        }
+
+        #btn:hover{
+            background-color: rgb(103, 139, 247);
+        }
+    </style>
+</head>
+<body>
+    <div id="btn" onclick="eventoBtn()">Pulsa aquí!</div>
+    <script src="01-eventos.js"></script>
+</body>
+</html>

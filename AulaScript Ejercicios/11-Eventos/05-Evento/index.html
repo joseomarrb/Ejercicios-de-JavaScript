@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-Eventos AulaScript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }        
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 12px;
+        }
+
+        .boton{
+            text-align: center;
+            display:block; 
+            font-family: sans-serif;
+            cursor:pointer;
+            margin: 10px;
+            border:1px solid black;
+            padding: 25px 60px;
+            font-size: 28px;
+            box-shadow: 1px 2px 2px 2px #0004;
+            transition: scale .2s ease;
+        }
+        
+        .boton:hover{
+            scale: 1.1;
+        }
+
+    </style> 
+</head>
+<body>
+
+    <div id="boton1" class="boton" onclick="pulsar(event)">Pulsar aquí</div>             
+    <div id="boton2" class="boton" onclick="pulsar(event)">Pulsar aquí</div>  
+    <script src="05-eventos.js"></script>
+
+</body>
+</html>

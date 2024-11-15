@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06-Evento AulaScript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        #main{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: antiquewhite;
+            width: 90%;
+            padding: 40px;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 2px 2px 2px 2px #0004;
+        }
+
+        input{
+            text-align: center;
+            font-size: 16px;
+        }
+
+
+        p{
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <main id="main">
+
+        <p>Coordenada X</p>              
+        <input id="cX" readonly>             
+        <p>Coordenada Y</p>            
+        <input id="cY" readonly>
+        
+    </main>
+
+    <script src="06-eventos.js"></script>
+</body>
+</html>
