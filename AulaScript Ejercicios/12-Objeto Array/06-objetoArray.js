@@ -24,5 +24,3 @@ function rotar(lst1, lst2) {
 };
 
 rotar(ocupados, libres);
-ocupados
-libres

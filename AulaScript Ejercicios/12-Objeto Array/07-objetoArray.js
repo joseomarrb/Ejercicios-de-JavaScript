@@ -6,7 +6,12 @@
  * y css=['Luis','Juan', 'Ana','María'] la lista obtenida sería ['Juan', 'Ana'].
  */
 
-let html = new Array('Pedro', 'Juan', 'Ana');
+let html = new Array('Pedro', 'Juan', 'Ana'); 
 let css = new Array('Luis', 'Juan', 'Ana', 'María');
 
-[...html, ...css].filter( name => name );
+let setHtml = new Set(html); 
+let setCss = new Set(css);
+
+let interseccion = [...setHtml].filter(nombre => setCss.has(nombre))
+interseccion.sort();
+console.log(interseccion)

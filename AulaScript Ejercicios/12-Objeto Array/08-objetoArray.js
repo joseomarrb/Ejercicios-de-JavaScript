@@ -9,3 +9,17 @@
  * Aclaraciones: Por ejemplo tienes la lista compra con Naranjas: false, 
  * Manzanas:true, Peras:false, Plátanos: true. La lista pendientes contendrá Naranjas y Peras.
  */
+
+let compra = new Array(
+    {nombre: 'Peras', estado: false},
+    {nombre: 'Manzanas', estado: true},
+    {nombre: 'Naranjas', estado: false},
+    {nombre: 'Platanos', estado: true},
+)
+
+let pendiente = new Array()
+
+compra.filter( datos => {
+    if (!datos.estado) { pendiente.push(datos.nombre)} 
+});
+
