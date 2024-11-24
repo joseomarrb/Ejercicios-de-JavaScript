@@ -8,5 +8,26 @@
  * 
  * agrupar("Avion, avispa, tigre, leon, Tejón, lince, abeja, abejorro"), resultado:
  * 
- *  {a: 'abeja, abejorro, Avion, avispa', l: 'leon, lince', t: 'Tejón, tigre'}
+ * {a: 'abeja, abejorro, Avion, avispa', l: 'leon, lince', t: 'Tejón, tigre'}
  */
+
+function agrupar(lista) {
+    const division = lista.split(', ');
+    const objeto = {};
+
+    division.forEach(palabra => {
+        const letraInicial = palabra[0].toLowerCase();
+        if (!objeto[letraInicial]) {
+            objeto[letraInicial] = [];
+        }
+        objeto[letraInicial].push(palabra);
+    });
+
+    for (let letra in objeto) {
+        objeto[letra] = objeto[letra].join(', ');
+    }
+    return objeto;
+}
+
+console.log(agrupar("Avion, avispa, tigre, leon, Tejón, lince, abeja, abejorro"));
+

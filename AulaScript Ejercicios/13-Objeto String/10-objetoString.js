@@ -8,3 +8,9 @@
  * esto dará lugar al objeto
  * {nombre: "juan", apellidos:"Perez Sanchez", edad:10, nivel:"base"}
  */
+
+function leeDato(stringAObjeto) {
+    return JSON.parse(stringAObjeto);
+};
+
+console.log(leeDato('{"nombre": "Juan", "apellidos": "Perez Sanchez", "edad": 30, "nivel": "base"}'));

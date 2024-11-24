@@ -7,3 +7,13 @@
  * Aclaraciones: Ppor ejemplo insertar("nombre:,edad 30:", "nombre", "Juan"), 
  * el resultado será la cadena"nombre: Juan, edad:30"
  */
+
+function insertar(frase, firstWord, secondWord) {
+    if ( frase.includes(firstWord) ){
+        return frase.replace(firstWord, `${firstWord} ${secondWord}`)
+    } else {
+        return frase;
+    }
+}
+
+console.log(insertar("nombre, edad: 30", "nombre", "Juan"));

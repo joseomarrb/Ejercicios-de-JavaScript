@@ -7,3 +7,9 @@
  * Aclaraciones: Por ejemplo tenemos la llamada unirEspacios("HTML       es      muy  fácil"), 
  * deberá devolver "HTML es my fácil"
  */
+
+function unirEspacios(frase) {
+    return frase.split(' ').join(" ");
+};
+
+console.log(unirEspacios("HTML       es      muy  fácil"));
