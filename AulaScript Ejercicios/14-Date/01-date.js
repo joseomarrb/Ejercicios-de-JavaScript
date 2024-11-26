@@ -6,3 +6,10 @@
  * Aclaraciones: Por ejemplo si la fecha de nacimiento es el 3 de febrero de 1990 
  * (3, 2, 1990) la función debe decirtes que nació en Sábado
  */
+
+function fechaNacimiento(date){
+    const DATE = new Date(date);
+    return DATE;
+}
+
+console.log(fechaNacimiento('2,3,1990'));
