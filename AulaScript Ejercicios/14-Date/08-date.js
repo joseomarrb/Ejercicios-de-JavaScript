@@ -7,3 +7,23 @@
  * devolverá que si lo es. Igualmente esBisiesto('1600/1/1') pero para esBisiesto('1800/1/1') 
  * dirá que no es bisiesto
  */
+
+function esBisiesto(fechaStr) {
+    // Convertir la cadena de fecha en un objeto Date
+    let fecha = new Date(fechaStr);
+    
+    // Obtener el año de la fecha
+    let año = fecha.getFullYear();
+    
+    // Regla para determinar si un año es bisiesto
+    if ((año % 4 === 0 && año % 100 !== 0) || (año % 400 === 0)) {
+        return true; // Es un año bisiesto
+    } else {
+        return false; // No es un año bisiesto
+    }
+}
+
+// Ejemplos de uso:
+console.log(esBisiesto('1984/1/1')); // Debería devolver true (1984 es un año bisiesto)
+console.log(esBisiesto('1600/1/1')); // Debería devolver true (1600 es un año bisiesto)
+console.log(esBisiesto('1800/1/1')); // Debería devolver false (1800 no es un año bisiesto)
