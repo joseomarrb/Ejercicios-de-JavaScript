@@ -34,45 +34,60 @@ var romanToInt = function(s) {
     let romanNumber = s.split('');
     for (let i = 0; i < romanNumber.length; i++) {
         let pares = romanNumber[i] + romanNumber[i + 1]
-        switch (romanNumber[i]) {
-            case 'I':
-                outputReturned += 1;
-                break;
-            case 'IV':
+        switch (pares) {
+            case 'IV': 
                 outputReturned += 4;
+                i += 2;
                 break;
-            case 'V':
-                outputReturned += 5;
-                break;
-            case 'IX':
+            case 'IX': 
                 outputReturned += 9;
+                i += 2;
                 break;
-            case 'X':
-                outputReturned += 10;
-                break;
-            case 'XL':
+            case 'XL': 
                 outputReturned += 40;
+                i += 2;
                 break;
-            case 'L':
-                outputReturned += 50;
+            case 'XC': 
+                outputReturned += 90;
+                i += 2;
                 break;
-            case 'XL':
-                outputReturned += 40;
+            case 'CD': 
+                outputReturned += 400;
+                i += 2;
                 break;
-            case 'C':
-                outputReturned += 100;
+            case 'CM': 
+                outputReturned += 900;
+                i += 2;
                 break;
-            case 'D':
-                outputReturned += 500;
-                break;
-            case 'M':
-                outputReturned += 1000;
-                break;
+            default: 
+                switch(romanNumber[i]){
+                    case 'I': 
+                        outputReturned += 1;
+                        break;
+                    case 'V': 
+                        outputReturned += 5;
+                        break;
+                    case 'X': 
+                        outputReturned += 10;
+                        break;
+                    case 'L': 
+                        outputReturned += 50;
+                        break;
+                    case 'C': 
+                        outputReturned += 100;
+                        break;
+                    case 'M': 
+                        outputReturned += 1000;
+                        break;
+                }
         }
     }
+
     return outputReturned;
 };
 
 console.log(romanToInt("III"));
 console.log(romanToInt('LVIII'));
 console.log(romanToInt("MCMXCIV"));
+
+
