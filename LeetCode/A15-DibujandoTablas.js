@@ -22,20 +22,48 @@
 
 function drawTable(data) {
     // Code here
-    let buffer = '';
-    for (const element of data) {
-        const props = Object.keys(element);
-        const properties = Math.max(...Object.values(element).map(name => name.length));
-        const menos = '+'.concat('-'.repeat(properties + 2)) + '+\n'
-        buffer += menos
+    if (!data.length) return '';
+    let table = '';
+    const keys = Object.keys(data[0]);
 
-        for (const propName of props) {
-            let word = `| ${propName.charAt().toUpperCase() + propName.slice(1, Infinity).toLowerCase()} |\n`;
-            buffer += word
-        }
-    }
+    let lengths = keys.map((key) => {
+        const array = data.map((obj) => String(obj[key]).length);
+        array.push(key.length);
+        return Math.max(...array);
+    });
 
-    return buffer;
+    const firstLine =
+        '+' + lengths.map((n) => '-'.repeat(n + 2)).join('+') + '+';
+    table += firstLine + '\n';
+
+    const rowBuild = (arr) =>
+        arr.map((elemnt, idx) => {
+            if (String(elemnt).length < lengths[idx]) {
+                return (
+                    ' ' +
+                    elemnt +
+                    ' '.repeat(lengths[idx] - String(elemnt).length) +
+                    ' '
+                );
+            }
+            return ' ' + elemnt + ' ';
+        });
+
+    const titles = keys.map(
+        (key) => key[0].toUpperCase() + key.substring(1)
+    );
+    const secondLine = '|' + rowBuild(titles).join('|') + '|';
+
+    table += secondLine + '\n';
+    table += firstLine + '\n';
+
+    data.forEach((obj) => {
+        const newLine = '|' + rowBuild(Object.values(obj)).join('|') + '|';
+        table += newLine + '\n';
+    });
+
+    table += firstLine;
+    return table;
 }
 
 console.log(
@@ -53,11 +81,13 @@ console.log(
 // | Charlie | New York  |
 // +---------+-----------+
 
-// console.log(drawTable([
-//     { gift: 'Doll', quantity: 10 },
-//     { gift: 'Book', quantity: 5 },
-//     { gift: 'Music CD', quantity: 1 },
-// ]));
+console.log(
+    drawTable([
+        { gift: 'Doll', quantity: 10 },
+        { gift: 'Book', quantity: 5 },
+        { gift: 'Music CD', quantity: 1 },
+    ])
+);
 // +----------+----------+
 // | Gift     | Quantity |
 // +----------+----------+
