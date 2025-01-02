@@ -29,37 +29,18 @@
 
 function decodeNumbers(symbols) {
     let total = 0;
-    const symb = symbols.split('');
-    for (let i = 0; i < symb.length; i++) {
-        let idxPlus = symb[i + 1];
-        switch (symb[i]) {
-            case '.':
-                idxPlus === ',' ||
-                idxPlus === ':' ||
-                idxPlus === ';' ||
-                idxPlus === '!'
-                    ? (total -= 1)
-                    : (total += 1);
-                break;
-            case ',':
-                idxPlus === ':' || idxPlus === ';' || idxPlus === '!'
-                    ? (total -= 5)
-                    : (total += 5);
-                break;
-            case ':':
-                idxPlus === ';' || idxPlus === '!'
-                    ? (total -= 10)
-                    : (total += 10);
-                break;
-            case ';':
-                idxPlus === '!' ? (total -= 50) : (total += 50);
-                break;
-            case '!':
-                total += 100;
-                break;
-            default:
-                return NaN;
+    const data = { '.': 1, ',': 5, ':': 10, ';': 50, '!': 100 };
+    for (let i = 0; i < symbols.length; i++) {
+        let currentIndex = data[symbols[i]];
+        let plusIndex = data[symbols[i + 1]];
+        if (!data.hasOwnProperty(symbols[i])) {
+            return NaN;
         }
+        if (plusIndex && currentIndex < plusIndex) {
+            currentIndex = currentIndex * -1;
+        }
+
+        total += currentIndex;
     }
     return total;
 }
