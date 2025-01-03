@@ -33,20 +33,38 @@
  */
 
 function fixGiftList(received, expected) {
-    // Escribe tu código aquí
-    const outputObject = { missing: {}, extra: {} };
-    const { missing, extra } = outputObject;
-
-    for (let i = 0; i < expected.length; i++) {
-        if (
-            !received.includes(expected[i]) &&
-            !missing.hasOwnProperty(expected[i])
-        ) {
-            missing[expected[i]] = (missing[expected[i]] || 0) + 1;
+    //Creacion de los objetos
+    let missing = {};
+    let extra = {};
+    let total = {
+        missing: {},
+        extra: {},
+    };
+    //Hacer un objeto con los valores unicos
+    const all = new Set([...received, ...expected]);
+    //Recorrer los arreglos y si ya existe la propiedad se le agrega uno, sino se inicia en 1
+    received.forEach((toy) => {
+        missing[toy] = missing[toy] + 1 || 1;
+    });
+    expected.forEach((toy) => {
+        extra[toy] = extra[toy] + 1 || 1;
+    });
+    //Se recorre el objeto sin duplicados
+    all.forEach((toy) => {
+        if (Object.hasOwn(extra, toy) && Object.hasOwn(missing, toy)) {
+            if (extra[toy] - missing[toy] > 0) {
+                total.missing[toy] = extra[toy] - missing[toy];
+            } else if (extra[toy] - missing[toy] < 0) {
+                total.extra[toy] = missing[toy] - extra[toy];
+            }
+        } else if (Object.hasOwn(missing, toy)) {
+            total.extra[toy] = missing[toy];
+        } else if (Object.hasOwn(extra, toy)) {
+            total.missing[toy] = extra[toy];
         }
-    }
-    console.log(missing);
-    return outputObject;
+    });
+
+    return total;
 }
 
 console.log(
@@ -91,5 +109,3 @@ console.log(fixGiftList(['bear', 'bear', 'car'], ['car', 'bear', 'bear']));
 //   missing: {},
 //   extra: {}
 // }
-
-
